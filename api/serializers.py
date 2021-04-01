@@ -1,7 +1,7 @@
 from django.contrib.auth.models import User, Group
 from rest_framework import serializers
 
-from api.models import Image
+from api.models import Image, PixPics
 
 
 class UserSerializer(serializers.ModelSerializer):
@@ -19,4 +19,10 @@ class ImageSerializer(serializers.ModelSerializer):
 class GroupSerializer(serializers.ModelSerializer):
     class Meta:
         model = Group
+        fields = '__all__'
+
+
+class PixPicsSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = PixPics
         fields = '__all__'

@@ -1,0 +1,25 @@
+version: "3"
+
+
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: django
+    volumes:
+      - .:/ImageHostingApi
+    env_file:
+      - db_keys.txt
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db1
+    command: bash -c 'python manage.py makemigrations && python manage.py migrate && python manage.py runserver 0.0.0.0:8000'
+
+  db1:
+    image: postgres:latest
+    container_name: postgres2
+    env_file:
+      - db_keys.txt

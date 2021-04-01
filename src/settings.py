@@ -15,7 +15,6 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
@@ -26,7 +25,6 @@ SECRET_KEY = 'n5@7!_$9-tn6o=g$b+vw&mjr%$+b%18e73(j-oj^=$9wn4gs&9'
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
 
 # Application definition
 
@@ -39,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'rest_framework',
+    'thumbnails',
+    'redis',
 
     'api',
 ]
@@ -74,7 +74,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'src.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
@@ -84,7 +83,6 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
@@ -104,7 +102,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
 
@@ -118,7 +115,6 @@ USE_L10N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
@@ -126,3 +122,33 @@ STATIC_URL = '/static/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+
+THUMBNAILS = {
+    'METADATA': {
+        'BACKEND': 'thumbnails.backends.metadata.DatabaseBackend',
+    },
+    'STORAGE': {
+        'BACKEND': 'django.core.files.storage.FileSystemStorage',
+    },
+    'SIZES': {
+        'small': {
+            'PROCESSORS': [
+                {'PATH': 'thumbnails.processors.resize', 'width': 200, 'height': 200},
+                # {'PATH': 'thumbnails.processors.crop', 'width': 200, 'height': 200}
+            ],
+            'POST_PROCESSORS': [
+                {
+                    'PATH': 'thumbnails.post_processors.optimize',
+                    'png_command': 'optipng -force -o7 "%(filename)s"',
+                    'jpg_command': 'jpegoptim -f --strip-all "%(filename)s"',
+                },
+            ],
+        },
+        'large': {
+            'PROCESSORS': [
+                {'PATH': 'thumbnails.processors.resize', 'width': 400, 'height': 400},
+                # {'PATH': 'thumbnails.processors.flip', 'direction': 'horizontal'}
+            ],
+        }
+    }
+}

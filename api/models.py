@@ -1,9 +1,6 @@
 from django.contrib.auth.models import User
 from django.db import models
-
-
-def nameFile(instance, filename):
-    return '/'.join(['images', str(instance.name), filename])
+from thumbnails.fields import ImageField
 
 
 class Image(models.Model):
@@ -13,3 +10,15 @@ class Image(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class PixPics(models.Model):
+    image = ImageField(pregenerated_sizes=["small", "large"])
+
+
+class SmallPixPics(models.Model):
+    image = ImageField(pregenerated_sizes=["small"])
+
+
+class BigPixPics(models.Model):
+    image = ImageField(pregenerated_sizes=["large"])
