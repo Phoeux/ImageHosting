@@ -1,13 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="1d0ef424-6b59-46de-9d90-65bbb9c8f85b" name="Default Changelist" comment="" />
+    <list default="true" id="1d0ef424-6b59-46de-9d90-65bbb9c8f85b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/api/serializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/urls.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1qZFvKwwJnJngZVaQJOa8sIaDcF" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -15,6 +54,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="TERMINAL_CUSTOM_COMMANDS_GOT_IT" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
@@ -53,11 +93,80 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1617279434039</updated>
-      <workItem from="1617279440962" duration="320000" />
+      <workItem from="1617279440962" duration="5741000" />
     </task>
+    <task id="LOCAL-00001" summary="api app creation">
+      <created>1617279997733</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1617279997733</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="2" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="api app creation" />
+    <option name="LAST_COMMIT_MESSAGE" value="api app creation" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="2338" y="177" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1617280037229">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2338" y="177" key="#com.intellij.execution.impl.EditConfigurationsDialog/1920.0.1920.1080/0.27.1920.985@1920.0.1920.1080" timestamp="1617280037229" />
+    <state width="1874" height="270" key="GridCell.Tab.0.bottom" timestamp="1617285143130">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1874" height="270" key="GridCell.Tab.0.bottom/1920.0.1920.1080/0.27.1920.985@1920.0.1920.1080" timestamp="1617285143130" />
+    <state width="1874" height="270" key="GridCell.Tab.0.center" timestamp="1617285143130">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1874" height="270" key="GridCell.Tab.0.center/1920.0.1920.1080/0.27.1920.985@1920.0.1920.1080" timestamp="1617285143130" />
+    <state width="1874" height="270" key="GridCell.Tab.0.left" timestamp="1617285143130">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1874" height="270" key="GridCell.Tab.0.left/1920.0.1920.1080/0.27.1920.985@1920.0.1920.1080" timestamp="1617285143130" />
+    <state width="1874" height="270" key="GridCell.Tab.0.right" timestamp="1617285143130">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1874" height="270" key="GridCell.Tab.0.right/1920.0.1920.1080/0.27.1920.985@1920.0.1920.1080" timestamp="1617285143130" />
+    <state width="1874" height="270" key="GridCell.Tab.1.bottom" timestamp="1617285143131">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1874" height="270" key="GridCell.Tab.1.bottom/1920.0.1920.1080/0.27.1920.985@1920.0.1920.1080" timestamp="1617285143131" />
+    <state width="1874" height="270" key="GridCell.Tab.1.center" timestamp="1617285143131">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1874" height="270" key="GridCell.Tab.1.center/1920.0.1920.1080/0.27.1920.985@1920.0.1920.1080" timestamp="1617285143131" />
+    <state width="1874" height="270" key="GridCell.Tab.1.left" timestamp="1617285143131">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1874" height="270" key="GridCell.Tab.1.left/1920.0.1920.1080/0.27.1920.985@1920.0.1920.1080" timestamp="1617285143131" />
+    <state width="1874" height="270" key="GridCell.Tab.1.right" timestamp="1617285143131">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1874" height="270" key="GridCell.Tab.1.right/1920.0.1920.1080/0.27.1920.985@1920.0.1920.1080" timestamp="1617285143131" />
+    <state width="235" height="541" key="HiddenNamespacesPopup" timestamp="1617280604425">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="235" height="541" key="HiddenNamespacesPopup/1920.0.1920.1080/0.27.1920.985@1920.0.1920.1080" timestamp="1617280604425" />
+    <state x="2475" y="251" width="800" height="543" key="Vcs.Push.Dialog.v2" timestamp="1617280019825">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2475" y="251" width="800" height="543" key="Vcs.Push.Dialog.v2/1920.0.1920.1080/0.27.1920.985@1920.0.1920.1080" timestamp="1617280019825" />
   </component>
 </project>
