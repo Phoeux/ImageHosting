@@ -84,6 +84,17 @@ DATABASES = {
     }
 }
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': os.environ.get("POSTGRES_DB"),
+#         'USER': os.environ.get("POSTGRES_USER"),
+#         'PASSWORD': os.environ.get("POSTGRES_PASSWORD"),
+#         'PORT': 5432,
+#         'HOST': "db1"
+#     }
+# }
+
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
 
@@ -127,6 +138,13 @@ THUMBNAILS = {
     'METADATA': {
         'BACKEND': 'thumbnails.backends.metadata.DatabaseBackend',
     },
+    # 'METADATA': {
+    #     'PREFIX': 'thumbs',
+    #     'BACKEND': 'thumbnails.backends.metadata.RedisBackend',
+    #     'db': "redis_db1",
+    #     'port': 6379,
+    #     'host': 'localhost',
+    # },
     'STORAGE': {
         'BACKEND': 'django.core.files.storage.FileSystemStorage',
     },
@@ -150,3 +168,10 @@ THUMBNAILS = {
         }
     }
 }
+
+# CACHES = {
+#     "default": {
+#         "BACKEND": "django_redis.cache.RedisCache",
+#         "LOCATION": "redis://redis://127.0.0.1:6379/1",
+#     }
+# }

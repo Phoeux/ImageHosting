@@ -7,8 +7,9 @@ from time import time
 class PixPics(models.Model):
     owner = models.ForeignKey(User, on_delete=models.CASCADE, related_name='pixpics_owner')
     image = ImageField()
-    time_stamp = models.PositiveIntegerField(default=time)
-    expire_time = models.PositiveIntegerField(default=300)
+
+    def __str__(self):
+        return self.image
 
 
 class EnterpriseLinks(models.Model):

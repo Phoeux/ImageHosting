@@ -16,6 +16,7 @@ services:
       - "8000:8000"
     depends_on:
       - db1
+      - redis
     command: bash -c 'python manage.py makemigrations && python manage.py migrate && python manage.py runserver 0.0.0.0:8000'
 
   db1:
@@ -23,3 +24,7 @@ services:
     container_name: postgres2
     env_file:
       - db_keys.txt
+
+  redis:
+    image: redis:latest
+    container_name: redis_db1

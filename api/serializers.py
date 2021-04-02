@@ -1,5 +1,7 @@
-from django.contrib.auth.models import User, Group
+from django.contrib.auth.models import User, Group, Permission
 from rest_framework import serializers
+from rest_framework.response import Response
+from thumbnails.models import ThumbnailMeta
 
 from api.models import PixPics, EnterpriseLinks
 
@@ -19,15 +21,20 @@ class GroupSerializer(serializers.ModelSerializer):
 class PixPicsSerializer(serializers.ModelSerializer):
     class Meta:
         model = PixPics
-        fields = ['id', 'image', 'owner', 'expire_time']
+        fields = ['id', 'image', 'owner']
 
     def to_representation(self, instance):
         basic, created = Group.objects.get_or_create(name='Basic')
         data = super().to_representation(instance)
-        data['small_thumb'] = self.context['request'].build_absolute_uri(instance.image.thumbnails.small.url)
-        if self.context['request'].user not in basic.user_set.all():
-            data['large_thumb'] = self.context['request'].build_absolute_uri(instance.image.thumbnails.large.url)
-        return data
+        perm = Permission.objects.get(codename='add_thumbnailmeta')
+        if self.context['request'].user in Group.permissions.through.objects.get(
+                group_id=self.context['request'].user.groups.get().id, permission_id=perm.id).group.user_set.all() or \
+                self.context['request'].user.is_superuser:
+            data['small_thumb'] = self.context['request'].build_absolute_uri(instance.image.thumbnails.small.url)
+            if self.context['request'].user not in basic.user_set.all():
+                data['large_thumb'] = self.context['request'].build_absolute_uri(instance.image.thumbnails.large.url)
+            return data
+        return Response(f"u need permission {perm} to add thumbnails")
 
 
 class BasicUserPixPicsSerializer(serializers.ModelSerializer):
