@@ -7,7 +7,7 @@ from thumbnails.models import ThumbnailMeta
 
 from api.models import PixPics, EnterpriseLinks
 from api.serializers import UserSerializer, GroupSerializer, PixPicsSerializer, BasicUserPixPicsSerializer, \
-    LinkSerializer, ThumbnailSerializer
+    LinkSerializer
 
 
 class UserModelView(viewsets.ModelViewSet):
@@ -107,8 +107,3 @@ class PlanCreate(viewsets.ModelViewSet):
             headers = self.get_success_headers(serializer.data)
             return Response(serializer.data, status=status.HTTP_201_CREATED, headers=headers)
         return Response("Forbidden, user must be an admin", status=status.HTTP_403_FORBIDDEN)
-
-
-class ThumbnailModelView(viewsets.ModelViewSet):
-    queryset = ThumbnailMeta.objects
-    serializer_class = ThumbnailSerializer
