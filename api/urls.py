@@ -9,7 +9,6 @@ router.register('group', views.GroupModelView, basename='group'),
 router.register('pixpics', views.PixelPicsModelView, basename='pixpics'),
 router.register('link', views.CreateLink, basename='link'),
 
-
 urlpatterns = [
     path('', include((router.urls, 'api'))),
 ]

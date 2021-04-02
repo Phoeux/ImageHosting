@@ -3,7 +3,6 @@ from django.contrib.auth.models import User, Group, Permission
 from rest_framework import viewsets, status
 from rest_framework.permissions import IsAuthenticated, IsAdminUser
 from rest_framework.response import Response
-from thumbnails.models import ThumbnailMeta
 
 from api.models import PixPics, EnterpriseLinks
 from api.serializers import UserSerializer, GroupSerializer, PixPicsSerializer, BasicUserPixPicsSerializer, \
@@ -84,26 +83,14 @@ class CreateLink(viewsets.ModelViewSet):
 
     def create(self, request, *args, **kwargs):
         enterprise, created = Group.objects.get_or_create(name='Enterprise')
+        perm = Permission.objects.get(codename='add_enterpriselinks')
         if self.request.user in enterprise.user_set.all() or self.request.user.is_superuser or \
-                self.request.user in Group.permissions.through.objects.filter(permission_id=37):
-            if int(request.data['expire_time']) < 300 or int(request.data['expire_time']) > 30000:
+                self.request.user in Group.permissions.through.objects.filter(permission_id=perm.id):
+            if int(request.data['expire_time']) < 300 or int(request.data['expire_time']) > 30_000:
                 return Response('Expire time must be between 300 and 30 000 secs')
-            req_img = PixPics.objects.get(id=request.data['img_link'])
-            return Response(request.build_absolute_uri(f"/media/{req_img.image}/"))
-        return Response("Forbidden, change your account to Enterprise", status=status.HTTP_403_FORBIDDEN)
-
-
-class PlanCreate(viewsets.ModelViewSet):
-    queryset = Group.objects
-    serializer_class = GroupSerializer
-    permission_classes = [IsAuthenticated]
-
-    def create(self, request, *args, **kwargs):
-        administrator, created = Group.objects.get_or_create(name='administrator')
-        if self.request.user in administrator.user_set.all() or self.request.user.is_superuser:
             serializer = self.get_serializer(data=request.data)
             serializer.is_valid(raise_exception=True)
             self.perform_create(serializer)
-            headers = self.get_success_headers(serializer.data)
-            return Response(serializer.data, status=status.HTTP_201_CREATED, headers=headers)
-        return Response("Forbidden, user must be an admin", status=status.HTTP_403_FORBIDDEN)
+            req_img = PixPics.objects.get(id=request.data['img_link'])
+            return Response(request.build_absolute_uri(f"/media/{req_img.image}/"), status=status.HTTP_201_CREATED)
+        return Response("Forbidden, change your account to Enterprise", status=status.HTTP_403_FORBIDDEN)

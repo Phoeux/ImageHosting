@@ -53,6 +53,8 @@ class LinkSerializer(serializers.ModelSerializer):
         fields = ['id', 'expire_time', 'img_link']
 
     def to_internal_value(self, data):
-        if data['expire_time'] > 30_000 or data['expire_time'] < 300:
+        result = {}
+        if int(data['expire_time']) > 30_000 or int(data['expire_time']) < 300:
             raise serializers.ValidationError("Expire time must be between 300 and 30 000 secs")
-        return data
+        result.update(img_link=PixPics.objects.get(id=int(data['img_link'])), expire_time=int(data['expire_time']))
+        return result
