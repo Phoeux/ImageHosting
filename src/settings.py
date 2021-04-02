@@ -134,7 +134,6 @@ THUMBNAILS = {
         'small': {
             'PROCESSORS': [
                 {'PATH': 'thumbnails.processors.resize', 'width': 200, 'height': 200},
-                # {'PATH': 'thumbnails.processors.crop', 'width': 200, 'height': 200}
             ],
             'POST_PROCESSORS': [
                 {
@@ -147,7 +146,6 @@ THUMBNAILS = {
         'large': {
             'PROCESSORS': [
                 {'PATH': 'thumbnails.processors.resize', 'width': 400, 'height': 400},
-                # {'PATH': 'thumbnails.processors.flip', 'direction': 'horizontal'}
             ],
         }
     }
