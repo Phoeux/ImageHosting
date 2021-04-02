@@ -12,7 +12,7 @@ from api.serializers import UserSerializer, GroupSerializer, PixPicsSerializer, 
 class UserModelView(viewsets.ModelViewSet):
     serializer_class = UserSerializer
     queryset = User.objects
-    permission_classes = [IsAuthenticated]
+    permission_classes = [IsAuthenticated, IsAdminUser]
 
 
 class GroupModelView(viewsets.ModelViewSet):
@@ -23,10 +23,14 @@ class GroupModelView(viewsets.ModelViewSet):
     def create(self, request, *args, **kwargs):
         administrator, created = Group.objects.get_or_create(name='administrator')
         if self.request.user in administrator.user_set.all() or self.request.user.is_superuser:
+
             perm_1 = Permission.objects.get(codename='add_enterpriselinks')
             perm_2 = Permission.objects.get(codename='add_pixpics')
             perm_3 = Permission.objects.get(codename='add_thumbnailmeta')
-            request.data['permissions'] = [perm_1.id, perm_2.id, perm_3.id]
+            if request.data['name'] == 'Basic':
+                request.data['permissions'] = [perm_2.id, perm_3.id]
+            else:
+                request.data['permissions'] = [perm_1.id, perm_2.id, perm_3.id]
             serializer = self.get_serializer(data=request.data)
             serializer.is_valid(raise_exception=True)
             self.perform_create(serializer)
@@ -48,7 +52,7 @@ class PixelPicsModelView(viewsets.ModelViewSet):
         basic, created = Group.objects.get_or_create(name='Basic')
         queryset = self.filter_queryset(self.get_queryset())
         perm = Permission.objects.get(codename='add_pixpics')
-        if self.request.user in basic.user_set.all() or self.request.user not in Group.permissions.through.objects.get(
+        if self.request.user in basic.user_set.all() or not self.request.user.is_superuser and self.request.user not in Group.permissions.through.objects.get(
                 group_id=self.request.user.groups.get().id, permission_id=perm.id).group.user_set.all():
             serializer = BasicUserPixPicsSerializer(queryset, many=True, context={"request": request})
         else:

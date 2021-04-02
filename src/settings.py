@@ -131,13 +131,6 @@ THUMBNAILS = {
     'METADATA': {
         'BACKEND': 'thumbnails.backends.metadata.DatabaseBackend',
     },
-    # 'METADATA': {
-    #     'PREFIX': 'thumbs',
-    #     'BACKEND': 'thumbnails.backends.metadata.RedisBackend',
-    #     'db': "redis_db1",
-    #     'port': 6379,
-    #     'host': 'localhost',
-    # },
     'STORAGE': {
         'BACKEND': 'django.core.files.storage.FileSystemStorage',
     },
@@ -161,10 +154,3 @@ THUMBNAILS = {
         }
     }
 }
-
-# CACHES = {
-#     "default": {
-#         "BACKEND": "django_redis.cache.RedisCache",
-#         "LOCATION": "redis://redis://127.0.0.1:6379/1",
-#     }
-# }
