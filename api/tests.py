@@ -1,21 +1,18 @@
 import tempfile
 
-import PIL
+from PIL import Image
 from django.contrib.auth.models import Group, User
 from django.urls import reverse
 from rest_framework import status
 
 from rest_framework.test import APITestCase
 
+from api.models import PixPics
 
 
 class TestAPI(APITestCase):
     def setUp(self):
         self.user = User.objects.create_superuser('joe', 'joe@doe.com', 'doe')
-        self.user2 = User.objects.create_user('joe2', 'joe@doe.com', 'doe')
-        self.basic_group = Group.objects.create(name='Basic')
-        self.premium_group = Group.objects.create(name='Premium')
-        self.enterprise_group = Group.objects.create(name='Enterprise')
 
     def test_group_creation(self):
         # Unauthorizer user can't create groups
@@ -35,21 +32,37 @@ class TestAPI(APITestCase):
         response = self.client.post(url, data, format='json')
         self.assertEqual(response.status_code, status.HTTP_201_CREATED, msg=response.data)
 
-    def test_upload_image(self):
-        # Creation of an image
-        image = PIL.Image.new('RGB', size=(1, 1))
-        file = tempfile.NamedTemporaryFile(suffix='.jpg')
-        image.save(file)
-        # sending image
-        self.client.login(username='joe', password='doe')
+    def test_upload_image_for_unauthorized_user(self):
+        # Creation of image
+        image = Image.new('RGB', (100, 100))
+        tmp_file = tempfile.NamedTemporaryFile(suffix='.jpg')
+        image.save(tmp_file)
+        tmp_file.seek(0)
+        # Unauthorized user can't upload an image
         url = reverse('api:pixpics-list')
-        with open(file.name, 'rb') as f:
-            data = {
-                'image': f,
-                'owner': self.user
-            }
+        data = {'image': tmp_file,
+                'owner': self.user.id
+                }
         response = self.client.post(url, data, format='multipart')
-        self.assertEqual(response.status_code, status.HTTP_201_CREATED)
+        self.assertEqual(status.HTTP_403_FORBIDDEN, response.status_code)
+        response = self.client.get(url, format='json')
+        self.assertEqual(status.HTTP_403_FORBIDDEN, response.status_code)
 
-
-
+    def test_file_is_accepted(self):
+        self.client.force_authenticate(self.user)
+        # Creation of image
+        image = Image.new('RGB', (100, 100))
+        tmp_file = tempfile.NamedTemporaryFile(suffix='.jpg')
+        image.save(tmp_file)
+        tmp_file.seek(0)
+        # Authorized user can upload an image
+        url = reverse('api:pixpics-list')
+        data = {
+            'image': tmp_file,
+            'owner': self.user.id
+        }
+        response = self.client.post(url, data, format='multipart')
+        self.assertEqual(status.HTTP_201_CREATED, response.status_code)
+        response = self.client.get(url, format='json')
+        self.assertEqual(status.HTTP_200_OK, response.status_code)
+        print(PixPics.objects.all())

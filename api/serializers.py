@@ -1,8 +1,8 @@
-from django.contrib.auth.models import User, Group, Permission
+from django.contrib.auth.models import User
 from rest_framework import serializers
-from rest_framework.response import Response
+from time import time
 
-from api.models import PixPics, EnterpriseLinks
+from api.models import PixPics, EnterpriseLinks, AccountType
 
 
 class UserSerializer(serializers.ModelSerializer):
@@ -13,48 +13,49 @@ class UserSerializer(serializers.ModelSerializer):
 
 class GroupSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Group
+        model = AccountType
         fields = '__all__'
 
 
-class PixPicsSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = PixPics
-        fields = ['id', 'image', 'owner']
-
-    def to_representation(self, instance):
-        basic, created = Group.objects.get_or_create(name='Basic')
-        data = super().to_representation(instance)
-        perm = Permission.objects.get(codename='add_thumbnailmeta')
-        if self.context['request'].user in Group.permissions.through.objects.get(
-                group_id=self.context['request'].user.groups.get().id, permission_id=perm.id).group.user_set.all() or \
-                self.context['request'].user.is_superuser:
-            data['small_thumb'] = self.context['request'].build_absolute_uri(instance.image.thumbnails.small.url)
-            if self.context['request'].user not in basic.user_set.all():
-                data['large_thumb'] = self.context['request'].build_absolute_uri(instance.image.thumbnails.large.url)
-            return data
-        return Response(f"u need permission {perm} to add thumbnails")
-
-
 class BasicUserPixPicsSerializer(serializers.ModelSerializer):
+    small_thumb = serializers.SerializerMethodField()
+
     class Meta:
         model = PixPics
-        fields = ['id', 'owner']
+        fields = ['id', 'owner', 'small_thumb']
 
-    def to_representation(self, instance):
-        data = super().to_representation(instance)
-        data['small_thumb'] = self.context['request'].build_absolute_uri(instance.image.thumbnails.small.url)
-        return data
+    def get_small_thumb(self, instance):
+        return self.context['request'].build_absolute_uri(instance.image.thumbnails.small.url)
+
+
+class PixPicsSerializer(BasicUserPixPicsSerializer):
+    large_thumb = serializers.SerializerMethodField()
+
+    class Meta:
+        model = PixPics
+        fields = ['id', 'image', 'owner', 'small_thumb', 'large_thumb']
+
+    def get_large_thumb(self, instance):
+        return self.context['request'].build_absolute_uri(instance.image.thumbnails.large.url)
 
 
 class LinkSerializer(serializers.ModelSerializer):
+    expire_time = serializers.SerializerMethodField()
+
     class Meta:
         model = EnterpriseLinks
-        fields = ['id', 'expire_time', 'img_link']
+        fields = ['id', 'validity_seconds', 'img_link', 'expire_time']
 
-    def to_internal_value(self, data):
-        result = {}
-        if int(data['expire_time']) > 30_000 or int(data['expire_time']) < 300:
-            raise serializers.ValidationError("Expire time must be between 300 and 30 000 secs")
-        result.update(img_link=PixPics.objects.get(id=int(data['img_link'])), expire_time=int(data['expire_time']))
-        return result
+    def get_expire_time(self, data):
+        return self.validate_expire_time(data)
+
+    def validate_expire_time(self, data):
+        validity_seconds = data.validity_seconds
+        time_stamp = data.time_stamp
+        curr_time = time()
+        if time_stamp + validity_seconds >= curr_time:
+            expire_time = (time_stamp + time_stamp) - curr_time
+            return expire_time
+        else:
+            data.delete()
+            raise serializers.ValidationError

@@ -19,21 +19,24 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1d0ef424-6b59-46de-9d90-65bbb9c8f85b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/api/serializers.py" afterDir="false" />
+    <list default="true" id="1d0ef424-6b59-46de-9d90-65bbb9c8f85b" name="Default Changelist" comment="fixies links">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/serializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/tests.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -57,9 +60,15 @@
     <property name="TERMINAL_CUSTOM_COMMANDS_GOT_IT" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="restartRequiresConfirmation" value="false" />
   </component>
-  <component name="RunManager">
-    <configuration name="ImageHostingApi" type="Python.DjangoServer" factoryName="Django server">
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/api/test_files" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Django Server.ImageHostingApi">
+    <configuration name="Test: api.tests.TestAPI" type="DjangoTestsConfigurationType" temporary="true">
       <module name="ImageHostingApi" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -68,11 +77,112 @@
       </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="TARGET" value="api.tests.TestAPI" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Test: api.tests.TestAPI.test_file_is_accepted" type="DjangoTestsConfigurationType" temporary="true">
+      <module name="ImageHostingApi" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="TARGET" value="api.tests.TestAPI.test_file_is_accepted" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Test: api.tests.TestAPI.test_group_creation" type="DjangoTestsConfigurationType" temporary="true">
+      <module name="ImageHostingApi" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="TARGET" value="api.tests.TestAPI.test_group_creation" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Test: api.tests.TestAPI.test_upload_image" type="DjangoTestsConfigurationType" temporary="true">
+      <module name="ImageHostingApi" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="TARGET" value="api.tests.TestAPI.test_upload_image" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="api.tests.TestAPI.test_upload_image" type="DjangoTestsConfigurationType" temporary="true">
+      <module name="ImageHostingApi" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="TARGET" value="tests.TestAPI.test_upload_image" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="ImageHostingApi" type="Python.DjangoServer" factoryName="Django server">
+      <module name="ImageHostingApi" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="DJANGO_SETTINGS_MODULE" value="src.settings" />
+      </envs>
+      <option name="SDK_HOME" value="$PROJECT_DIR$/venv/bin/python" />
+      <option name="WORKING_DIRECTORY" value="" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="launchJavascriptDebuger" value="false" />
-      <option name="port" value="8000" />
+      <option name="port" value="5000" />
       <option name="host" value="" />
       <option name="additionalOptions" value="" />
       <option name="browserUrl" value="" />
@@ -82,6 +192,23 @@
       <option name="customRunCommand" value="" />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Django Server.ImageHostingApi" />
+      <item itemvalue="Django tests.api.tests.TestAPI.test_upload_image" />
+      <item itemvalue="Django tests.Test: api.tests.TestAPI" />
+      <item itemvalue="Django tests.Test: api.tests.TestAPI.test_file_is_accepted" />
+      <item itemvalue="Django tests.Test: api.tests.TestAPI.test_group_creation" />
+      <item itemvalue="Django tests.Test: api.tests.TestAPI.test_upload_image" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Django tests.Test: api.tests.TestAPI.test_file_is_accepted" />
+        <item itemvalue="Django tests.Test: api.tests.TestAPI.test_upload_image" />
+        <item itemvalue="Django tests.Test: api.tests.TestAPI.test_group_creation" />
+        <item itemvalue="Django tests.Test: api.tests.TestAPI" />
+        <item itemvalue="Django tests.api.tests.TestAPI.test_upload_image" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -93,7 +220,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1617279434039</updated>
-      <workItem from="1617279440962" duration="5741000" />
+      <workItem from="1617279440962" duration="13715000" />
+      <workItem from="1617343168017" duration="671000" />
+      <workItem from="1617347305961" duration="26690000" />
+      <workItem from="1617602037103" duration="889000" />
+      <workItem from="1617621432639" duration="1233000" />
+      <workItem from="1617787369921" duration="22430000" />
     </task>
     <task id="LOCAL-00001" summary="api app creation">
       <created>1617279997733</created>
@@ -102,7 +234,56 @@
       <option name="project" value="LOCAL" />
       <updated>1617279997733</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Image model;&#10;serialization of User, Image, Group; User, Image, Group views">
+      <created>1617285327122</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1617285327122</updated>
+    </task>
+    <task id="LOCAL-00003" summary="thumbs still in dev, docker-compose">
+      <created>1617293057376</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1617293057376</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Finished with Basic, Premium and Enterprise abilities/features">
+      <created>1617358063623</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1617358063623</updated>
+    </task>
+    <task id="LOCAL-00005" summary="admin ability to create arbitrary plans">
+      <created>1617371716253</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1617371716253</updated>
+    </task>
+    <task id="LOCAL-00006" summary="small fixies">
+      <created>1617371786730</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1617371786730</updated>
+    </task>
+    <task id="LOCAL-00007" summary="small fixies">
+      <created>1617372435844</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1617372435844</updated>
+    </task>
+    <task id="LOCAL-00008" summary="fixies links">
+      <created>1617374952933</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1617374952933</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -118,55 +299,133 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="api app creation" />
-    <option name="LAST_COMMIT_MESSAGE" value="api app creation" />
+    <MESSAGE value="Image model;&#10;serialization of User, Image, Group; User, Image, Group views" />
+    <MESSAGE value="thumbs still in dev, docker-compose" />
+    <MESSAGE value="Finished with Basic, Premium and Enterprise abilities/features" />
+    <MESSAGE value="admin ability to create arbitrary plans" />
+    <MESSAGE value="small fixies" />
+    <MESSAGE value="fixies links" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixies links" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="2338" y="177" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1617280037229">
+    <state x="2566" y="159" width="618" height="728" key="#Test:_api.tests.TestAPI.test_group_creation" timestamp="1617602220033">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="2338" y="177" key="#com.intellij.execution.impl.EditConfigurationsDialog/1920.0.1920.1080/0.27.1920.985@1920.0.1920.1080" timestamp="1617280037229" />
-    <state width="1874" height="270" key="GridCell.Tab.0.bottom" timestamp="1617285143130">
+    <state x="2566" y="159" width="618" height="728" key="#Test:_api.tests.TestAPI.test_group_creation/1920.0.1920.1080/0.27.1920.985@1920.0.1920.1080" timestamp="1617602220033" />
+    <state x="2566" y="159" width="618" height="728" key="#Test:_api.tests.TestAPI.test_upload_image" timestamp="1617602153245">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1874" height="270" key="GridCell.Tab.0.bottom/1920.0.1920.1080/0.27.1920.985@1920.0.1920.1080" timestamp="1617285143130" />
-    <state width="1874" height="270" key="GridCell.Tab.0.center" timestamp="1617285143130">
+    <state x="2566" y="159" width="618" height="728" key="#Test:_api.tests.TestAPI.test_upload_image/1920.0.1920.1080/0.27.1920.985@1920.0.1920.1080" timestamp="1617602153245" />
+    <state x="2566" y="159" width="618" height="728" key="#api.tests.TestAPI.test_upload_image" timestamp="1617602186430">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1874" height="270" key="GridCell.Tab.0.center/1920.0.1920.1080/0.27.1920.985@1920.0.1920.1080" timestamp="1617285143130" />
-    <state width="1874" height="270" key="GridCell.Tab.0.left" timestamp="1617285143130">
+    <state x="2566" y="159" width="618" height="728" key="#api.tests.TestAPI.test_upload_image/1920.0.1920.1080/0.27.1920.985@1920.0.1920.1080" timestamp="1617602186430" />
+    <state x="2338" y="177" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1617802547964">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1874" height="270" key="GridCell.Tab.0.left/1920.0.1920.1080/0.27.1920.985@1920.0.1920.1080" timestamp="1617285143130" />
-    <state width="1874" height="270" key="GridCell.Tab.0.right" timestamp="1617285143130">
+    <state x="2338" y="177" key="#com.intellij.execution.impl.EditConfigurationsDialog/1920.0.1920.1080/0.27.1920.985@1920.0.1920.1080" timestamp="1617802547964" />
+    <state width="1874" height="295" key="GridCell.Tab.0.bottom" timestamp="1617808090517">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1874" height="270" key="GridCell.Tab.0.right/1920.0.1920.1080/0.27.1920.985@1920.0.1920.1080" timestamp="1617285143130" />
-    <state width="1874" height="270" key="GridCell.Tab.1.bottom" timestamp="1617285143131">
+    <state width="1874" height="295" key="GridCell.Tab.0.bottom/1920.0.1920.1080/0.27.1920.985@1920.0.1920.1080" timestamp="1617808090517" />
+    <state width="1874" height="295" key="GridCell.Tab.0.center" timestamp="1617808090517">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1874" height="270" key="GridCell.Tab.1.bottom/1920.0.1920.1080/0.27.1920.985@1920.0.1920.1080" timestamp="1617285143131" />
-    <state width="1874" height="270" key="GridCell.Tab.1.center" timestamp="1617285143131">
+    <state width="1874" height="295" key="GridCell.Tab.0.center/1920.0.1920.1080/0.27.1920.985@1920.0.1920.1080" timestamp="1617808090517" />
+    <state width="1874" height="295" key="GridCell.Tab.0.left" timestamp="1617808090517">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1874" height="270" key="GridCell.Tab.1.center/1920.0.1920.1080/0.27.1920.985@1920.0.1920.1080" timestamp="1617285143131" />
-    <state width="1874" height="270" key="GridCell.Tab.1.left" timestamp="1617285143131">
+    <state width="1874" height="295" key="GridCell.Tab.0.left/1920.0.1920.1080/0.27.1920.985@1920.0.1920.1080" timestamp="1617808090517" />
+    <state width="1874" height="295" key="GridCell.Tab.0.right" timestamp="1617808090517">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1874" height="270" key="GridCell.Tab.1.left/1920.0.1920.1080/0.27.1920.985@1920.0.1920.1080" timestamp="1617285143131" />
-    <state width="1874" height="270" key="GridCell.Tab.1.right" timestamp="1617285143131">
+    <state width="1874" height="295" key="GridCell.Tab.0.right/1920.0.1920.1080/0.27.1920.985@1920.0.1920.1080" timestamp="1617808090517" />
+    <state width="1874" height="295" key="GridCell.Tab.1.bottom" timestamp="1617808090518">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1874" height="270" key="GridCell.Tab.1.right/1920.0.1920.1080/0.27.1920.985@1920.0.1920.1080" timestamp="1617285143131" />
+    <state width="1874" height="295" key="GridCell.Tab.1.bottom/1920.0.1920.1080/0.27.1920.985@1920.0.1920.1080" timestamp="1617808090518" />
+    <state width="1874" height="295" key="GridCell.Tab.1.center" timestamp="1617808090517">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1874" height="295" key="GridCell.Tab.1.center/1920.0.1920.1080/0.27.1920.985@1920.0.1920.1080" timestamp="1617808090517" />
+    <state width="1874" height="295" key="GridCell.Tab.1.left" timestamp="1617808090517">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1874" height="295" key="GridCell.Tab.1.left/1920.0.1920.1080/0.27.1920.985@1920.0.1920.1080" timestamp="1617808090517" />
+    <state width="1874" height="295" key="GridCell.Tab.1.right" timestamp="1617808090518">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1874" height="295" key="GridCell.Tab.1.right/1920.0.1920.1080/0.27.1920.985@1920.0.1920.1080" timestamp="1617808090518" />
     <state width="235" height="541" key="HiddenNamespacesPopup" timestamp="1617280604425">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state width="235" height="541" key="HiddenNamespacesPopup/1920.0.1920.1080/0.27.1920.985@1920.0.1920.1080" timestamp="1617280604425" />
-    <state x="2475" y="251" width="800" height="543" key="Vcs.Push.Dialog.v2" timestamp="1617280019825">
+    <state x="2107" y="72" width="1536" height="901" key="MergeDialog" timestamp="1617602127011">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="2475" y="251" width="800" height="543" key="Vcs.Push.Dialog.v2/1920.0.1920.1080/0.27.1920.985@1920.0.1920.1080" timestamp="1617280019825" />
+    <state x="2107" y="72" width="1536" height="901" key="MergeDialog/1920.0.1920.1080/0.27.1920.985@1920.0.1920.1080" timestamp="1617602127011" />
+    <state x="2475" y="251" width="800" height="543" key="Vcs.Push.Dialog.v2" timestamp="1617374977712">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2475" y="251" width="800" height="543" key="Vcs.Push.Dialog.v2/1920.0.1920.1080/0.27.1920.985@1920.0.1920.1080" timestamp="1617374977712" />
+    <state x="2020" y="127" width="1720" height="785" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1617292125512">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2020" y="127" width="1720" height="785" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/1920.0.1920.1080/0.27.1920.985@1920.0.1920.1080" timestamp="1617292125512" />
+    <state x="2020" y="127" width="1720" height="785" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1617802548465">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2020" y="127" width="1720" height="785" key="com.intellij.history.integration.ui.views.FileHistoryDialog/1920.0.1920.1080/0.27.1920.985@1920.0.1920.1080" timestamp="1617802548465" />
+    <state x="2672" y="432" width="416" height="181" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1617602077400">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2672" y="432" width="416" height="181" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/1920.0.1920.1080/0.27.1920.985@1920.0.1920.1080" timestamp="1617602077400" />
+    <state x="2585" y="242" width="590" height="554" key="find.popup" timestamp="1617802004075">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2585" y="242" width="590" height="554" key="find.popup/1920.0.1920.1080/0.27.1920.985@1920.0.1920.1080" timestamp="1617802004075" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/api/views.py</url>
+          <line>72</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/api/tests.py</url>
+          <line>35</line>
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/api/tests.py</url>
+          <line>67</line>
+          <option name="timeStamp" value="29" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/api/views.py</url>
+          <line>84</line>
+          <option name="timeStamp" value="35" />
+        </line-breakpoint>
+      </breakpoints>
+      <default-breakpoints>
+        <breakpoint type="python-exception">
+          <properties notifyOnTerminate="true" exception="BaseException">
+            <option name="notifyOnTerminate" value="true" />
+          </properties>
+        </breakpoint>
+      </default-breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/ImageHostingApi$Test__api_tests_TestAPI.coverage" NAME="Test: api.tests.TestAPI Coverage Results" MODIFIED="1617602783478" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/ImageHostingApi$Test__api_tests_TestAPI_test_group_creation.coverage" NAME="Test: api.tests.TestAPI.test_group_creation Coverage Results" MODIFIED="1617602897330" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/ImageHostingApi$Test__api_tests_TestAPI_test_upload_image.coverage" NAME="Test: api.tests.TestAPI.test_upload_image Coverage Results" MODIFIED="1617800439856" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/ImageHostingApi$Test__api_tests_TestAPI_test_file_is_accepted.coverage" NAME="Test: api.tests.TestAPI.test_file_is_accepted Coverage Results" MODIFIED="1617800910853" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>
 </project>
